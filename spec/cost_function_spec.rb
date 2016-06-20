@@ -1,5 +1,5 @@
-require "./cost_function"
 require "matrix"
+require "./cost_function"
 
 RSpec.describe CostFunction do
   let(:x_train) do
@@ -16,7 +16,7 @@ RSpec.describe CostFunction do
     ])
   end
 
-  let(:thetas) do
+  let(:params) do
     Matrix.rows([
       [1],
       [1],
@@ -26,7 +26,7 @@ RSpec.describe CostFunction do
   end
 
   let(:cost_function) do
-    described_class.new(x_train: x_train, y_train: y_train, thetas: thetas)
+    described_class.new(x_train: x_train, y_train: y_train, params: params)
   end
 
   describe "#calculate" do
